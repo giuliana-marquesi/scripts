@@ -15,18 +15,27 @@ instala_dependencias() {
 	fi
 }
 
+permissiona() {
+	chmod 644 pomodoro.desktop
+	chown root pomodoro.desktop
+	chmod 751 pomodoro.sh
+	chwon $USER pomodoro.sh
+	chmod 644 pomodoro.png
+	chwon $USER pomodoro.png
+}
+
 echo "Qual é a base da distribuição?"
 read base_distro
 
 if [ $base_distro == "debian" ]
 then
-	c_instalador="apt-get install -y"
+	c_instalador="sudo apt-get install -y"
 	# atualizando no debian
 	echo "			----- "
 	echo "Atualizando antes das instalações"
 	echo " "
 	echo Atualizando repositórios..
-	if ! apt-get update
+	if ! sudo apt-get update
 	then
     	echo "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list"
     	exit 1
@@ -34,7 +43,7 @@ then
 	echo "Atualização feita com sucesso"
 	#
 	echo "Atualizando pacotes já instalados"
-	if ! apt-get dist-upgrade -y
+	if ! sudo apt-get dist-upgrade -y
 	then
     	echo "Não foi possível atualizar pacotes."
 	    exit 1
@@ -47,7 +56,7 @@ then
 	echo "			----- "
 	echo "Atualizando antes das instalações"
 	echo " "
-	if ! pacman -Syu --noconfirm
+	if ! sudo pacman -Syu --noconfirm
 	then
 		echo "Não foi possível atualizar os repositórios. Verifique seu arquivo /etc/apt/sources.list"
     	exit 1
@@ -63,12 +72,10 @@ fi
 instala_dependencias zenity
 instala_dependencias paplay
 
-chmod 644 pomodoro.desktop
-chown root pomodoro.desktop
-chmod 751 pomodoro.sh
-chwon $USER pomodoro.sh
-chmod 644 pomodoro.png
-chwon $USER pomodoro.png
+if ! permissiona
+then
+	echo "Não foi possível modificar as permissões dos arquivos"
+fi
 
 if ! mkdir /opt/pomodoro
 then
