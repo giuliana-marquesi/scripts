@@ -6,7 +6,7 @@ Não estava muito satisfeita com as opções simples oferecidas.
 
 Para agora falta:
 
-- [ ] terminar o script de configuracao
+- [x] terminar o script de configuracao
 - [x] retomar aimagem png
 - [x] fazer o pomodoro.desktop
 - [ ] criar a opção de alterar os tempos
