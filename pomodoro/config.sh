@@ -82,12 +82,12 @@ then
 	echo "Não foi possível criar a pasta pomodoro no caminho /opt/"
 	exit 1
 fi
-if ! cp pomodoro.png pomodoro.sh /opt/pomodoro/
+if ! mv pomodoro.png pomodoro.sh /opt/pomodoro/
 then
 	echo "Não foi possível mover os arquivos pomodoro.png e pomodoro.sh para o caminho /opt/pomodoro"
 	exit 1
 fi
-if ! cp pomodoro.desktop /usr/share/applications/
+if ! mv pomodoro.desktop /usr/share/applications/
 then
 	echo "Não foi possível mover o arquivo pomodoro.desktop para o caminho /usr/share/applications"
 	exit 1
