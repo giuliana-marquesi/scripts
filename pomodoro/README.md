@@ -5,9 +5,9 @@ opções simples oferecidas
 
 Para agora falta:
 
-[ ] terminar o script de configuracao
-[ ] retomar aimagem png
-[ ] fazer o pomodoro.desktop
-[ ] criar a opção de alterar os tempos
-[ ] criar a opção de pausar o cronometro
-[ ] criar a opção de resetar o cronometro
+- [ ] terminar o script de configuracao
+- [ ] retomar aimagem png
+- [ ] fazer o pomodoro.desktop
+- [ ] criar a opção de alterar os tempos
+- [ ] criar a opção de pausar o cronometro
+- [ ] criar a opção de resetar o cronometro
